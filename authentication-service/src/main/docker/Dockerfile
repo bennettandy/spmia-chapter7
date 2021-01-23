@@ -1,6 +1,6 @@
 FROM openjdk:8
-#RUN  apk update && apk upgrade && apk add netcat-openbsd
-RUN apk add --update netcat-openbsd && rm -rf /var/cache/apk/*
+RUN  apt-get update && apt-get install netcat-openbsd
+#RUN apk add --update netcat-openbsd && rm -rf /var/cache/apk/*
 RUN mkdir -p /usr/local/authenticationservice
 ADD @project.build.finalName@.jar /usr/local/authenticationservice/
 ADD run.sh run.sh
